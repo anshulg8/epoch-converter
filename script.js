@@ -2,8 +2,8 @@ const epochInput = document.querySelector('#epoch-input');
 const dateOutput = document.querySelector('#date-output');
 const dateOutputUtc = document.querySelector('#date-output-utc');
 const dateOutputNow = document.querySelector('#date-now');
-
-var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+const copyText = document.getElementById("ct");
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
 function display_c(){
   let refresh = 1000;
@@ -23,3 +23,14 @@ epochInput.oninput = function() {
   d.setMinutes(d.getMinutes() + d.getTimezoneOffset());
   dateOutputUtc.textContent = d.toLocaleDateString("en-US", options)
 };
+
+function copyDivToClipboard() {
+    var range = document.createRange();
+    range.selectNode(copyText);
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();// to deselect
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied";
+}
