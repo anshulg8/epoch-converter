@@ -9,12 +9,18 @@
   </head>
   <body onload=display_ct();>
     <h1>Epoch Converter</h1>
-      Now: <span id='ct' ></span> <br>
+      Now: <span id='ct' ></span>
+      <div class="tooltip">
+         <button onclick="copyDivToClipboard()">
+           <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+           Copy Timestamp
+         </button>
+      </div>
+    <br>
       Epoch: <input id="epoch-input" type="text"> <br>
       Local: <span id="date-output">?</span> <br>
       UTC : <span id="date-output-utc">?</span>
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
-
 <!-- https://codepen.io/zvakanaka/pen/EQeYbw -->
