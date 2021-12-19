@@ -1,10 +1,11 @@
 const epochInput = document.querySelector('#epoch-input');
 const dateOutput = document.querySelector('#date-output');
 const dateOutputUtc = document.querySelector('#date-output-utc');
-const dateOutputNow = document.querySelector('#date-now');
-const copyText = document.getElementById("ct");
+const ct = document.querySelector('#ct');
+
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
+// To display current time
 function display_c(){
   let refresh = 1000;
   mytime = setTimeout('display_ct()',refresh)
@@ -26,6 +27,7 @@ epochInput.oninput = function() {
 
 function copyDivToClipboard() {
     var range = document.createRange();
+    var copyText = document.getElementById("ct");
     range.selectNode(copyText);
     window.getSelection().removeAllRanges(); // clear current selection
     window.getSelection().addRange(range); // to select text
