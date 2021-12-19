@@ -7,16 +7,16 @@
     <title>Epoch Converter</title>
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
-  <body onload=display_ct();>
+  <body onload=display_ct()>
     <h1>Epoch Converter</h1>
       Now: <span id='ct' ></span>
       <div class="tooltip">
-         <button onclick="copyDivToClipboard()">
-           <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-           Copy Timestamp
-         </button>
+        <button onclick="copyDivToClipboard()">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          Copy Timestamp
+        </button>
       </div>
-    <br>
+      <br>
       Epoch: <input id="epoch-input" type="text"> <br>
       Local: <span id="date-output">?</span> <br>
       UTC : <span id="date-output-utc">?</span>
